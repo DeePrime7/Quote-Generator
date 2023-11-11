@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        body{
+            background: url(quote\ background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        h2{
+            background: black;
+            color: rgb(255, 145, 0);
+            border-radius: 10px;
+            padding: 3px;
+            border: 2px solid rgb(255, 145, 0);
+            width: fit-content;
+            display: block;
+            margin: auto;
+        }
+        .board{
+            background: white;
+            border-radius: 20px;
+            width: 40vw;
+            height: 200px;
+            display: block;
+            margin: 10px auto;
+            padding: 50px 40px;
+        }
+        button{
+            background: black;
+            border: none;
+            color: white;
+            font-size: 1vw;
+            border-radius: 7px;
+            margin: 10px;
+            padding: 10px;
+        }
+        button:active{
+            background-color: lightblue;
+        }
+        #quote{
+            font-size: 2vw;
+            color: black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        #author{
+            color: red;
+            font-weight: 100;
+            font-family: Arial;
+            margin-top: 20px;
+            font-size: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="documet">
+        <div class="title">
+            <h2>Java Script Quote Generator</h2>
+        </div>
+        <div class="board">
+            <p id="quote"> I love Jesus, I love God, I love his word, And I love the Bible</p>
+            <p id="author">DADDY GO</p>
+            <button id="new-quote">New Quote</button>
+        </div>
+    </div>
+
+
+
+<script>
+
+
+let btn = document.getElementById('new-quote')
+
+let quote = document.getElementById("quote")
+
+let person = document.getElementById("author")
+
+const quotes = [
+    {quote:"I love Jesus", person:"Daniel Otene"},
+    {quote:"I love The Bible", person:"Daniel Otene"},
+    {quote:"I love The Gospel", person:"Daniel Otene"},
+    {quote:"I love His Word", person:"Daniel Otene"},
+    {quote:"I love Him", person:"Daniel Otene"},
+]
+
+btn.addEventListener("click", function () {
+    let random = Math.floor(Math.random() * quotes.length)
+
+    quote.innerText = quotes[random].quote
+
+    person.innerText = quotes[random].person
+})
+
+
+
+
+
+
+
+
+
+// let quote = document.querySelector("space")
+
+// for (let i = 0; i < quoteArray.length; i++) {
+
+//     console.log([i])
+//     i++
+    
+// }
+
+
+</script>
+</body>
+</html>
